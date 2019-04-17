@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://PlanetTest.gd" type="Script" id=1]
+[ext_resource path="res://BlackHole.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Planet.tscn" type="PackedScene" id=3]
+
+[node name="PlanetTest" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="BlackHole" parent="." instance=ExtResource( 2 )]
+position = Vector2( 492, 288 )
+
+[node name="Label" type="Label" parent="BlackHole"]
+margin_left = 21.0
+margin_top = -34.0
+margin_right = 61.0
+margin_bottom = -20.0
+text = "Black Hole"
+
+[node name="Pivot1" type="Node2D" parent="."]
+position = Vector2( 518, 274 )
+
+[node name="Planet" parent="Pivot1" instance=ExtResource( 3 )]
+position = Vector2( 259, 12 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="HP" type="Label" parent="."]
+margin_left = 30.0
+margin_top = 28.0
+margin_right = 148.0
+margin_bottom = 42.0
+text = "BLACK HOLE HP: 0"
+
+[node name="CreepSpawn" type="Position2D" parent="."]
+position = Vector2( 66, 595 )
+
+[node name="CreepTimer" type="Timer" parent="."]
+wait_time = 3.0
+
